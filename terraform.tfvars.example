@@ -1,0 +1,29 @@
+# Required variables
+# - Fill in before beginning quickstart
+# ==========================================================
+
+# AWS Access Key
+aws_access_key = ""
+
+# AWS Secret Key
+aws_secret_key = ""
+
+# Optional variables, uncomment to customize the quickstart
+# ----------------------------------------------------------
+
+# AWS region for all resources
+# aws_region = ""
+
+# Prefix for all resources created by quickstart
+# prefix = ""
+
+# EC2 instance size of all created instances
+# instance_type = ""
+
+# Docker version installed on target hosts
+# - Must be a version supported by the Rancher install scripts
+# docker_version = ""
+
+# Kubernetes version used for creating management server cluster
+# - Must be supported by RKE terraform provider 1.0.1
+# rke_kubernetes_version = ""
