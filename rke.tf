@@ -17,3 +17,31 @@ resource "local_file" "kube_config_server_yaml" {
   filename = format("%s/%s", path.root, "kube_config_cluster.yaml")
   content  = rke_cluster.opni_cluster.kube_config_yaml
 }
+
+resource "helm_release" "nats" {
+  repository = "https://charts.bitnami.com/bitnami"
+  name = "nats"
+  chart = "nats"
+  namespace = "opni"
+  create_namespace = true
+
+  set {
+    name = "auth.enabled"
+    value = "true"
+  }
+
+  set {
+    name = "auth.password"
+    value = "password"
+  }
+
+  set {
+    name = "replicaCount"
+    value = 3
+  }
+
+  set {
+    name = "maxPayload"
+    value = 8388608
+  }
+}
